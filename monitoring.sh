@@ -1,5 +1,30 @@
 #!/bin/bash
 set -e
+
+filename="/var/log/monitoring.log"
+threshold=80
+while [ $# -ne 0 ]
+do
+	if [ $1 = "-t" ]
+	then
+		shift
+		threshold=$1
+		shift
+	
+	elif [ $1 = "-f" ]
+	then
+		shift
+		filename=$1
+		shift
+	else
+		shift 
+		shift
+	fi
+done
+
+
+exec > $filename 2>&1
+
 echo "System Monitoring Alert - `date +"%Y-%m-%d %H:%M:%S"`\n"
 echo "================================================================\n"
 echo "Disk Usage: "
@@ -7,9 +32,9 @@ echo "`df`\n"
 usage_list=$( df | awk 'NR > 1 {print $5}' )
 index=1
 for i in $usage_list;do
-	if [ ${i%"%"} -ge 80 ];then
+	if [ ${i%"%"} -ge $threshold ];then
 		text=`df | awk -v ch_index=${index} 'NR == ch_index {print $1}'`
-		echo "Warning : ${text} is above 80% Usage"
+		echo "$( tput setaf 1 )Warning : ${text} is above ${threshold}% Usage$( tput sgr0 )"
 	fi
 	index=$(( index + 1 ))
 done
