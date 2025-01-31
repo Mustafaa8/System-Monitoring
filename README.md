@@ -21,7 +21,7 @@ sudo sh monitoring.sh
 ```
 - or using cron jobs
 ```bash
-sudo croptab -e 
+sudo crontab -e 
 ```
 and add it to the file using cron syntax to schedule the running of the script 
 
