@@ -37,7 +37,7 @@ Example:
 ```
 ## Options
 the script has two options to change how it runs
-1. `-t` : to define the threshold for the disk usage . if the disk usage is higher than it , it gives a warning => default:80%
+1. `-t` : to define the threshold for the disk usage . if the disk usage is higher than it , it gives a warning => default: 80%
 2. `-f` : to define the file in which the output will be => default :/var/log/monitoring
 ## Screenshots from the output 
 ### Script
