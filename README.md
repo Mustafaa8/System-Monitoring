@@ -2,6 +2,19 @@
 it is a script written in bash that track system metrices like disk usage , memory usage , CPU usage ... etc. 
 script was written in bash with no external libraries or commands to be installed
 
+## Features
+1. Check Disk Usage:
+  • Report the percentage of disk space used for each mounted partition.
+  • Warn if usage exceeds a specified threshold (e.g., 80%).
+2. Check CPU Usage:
+  • Display the current CPU usage as a percentage.
+3. Check Memory Usage:
+  • Show total, used, and free memory.
+4. Check Running Processes:
+  • Display the top 5 memory-consuming processes.
+5. Generate a Report:
+  • Save the collected information into a log file (e.g., system_monitor.log).
+
 ## usage
 1. we need to clone the repo
 ```bash
@@ -17,6 +30,7 @@ sudo sh monitoring.sh
 sudo croptab -e 
 ```
 and add it to the file using cron syntax to schedule the running of the script 
+
 Example:
 ```cron
 * * * * * sudo sh ~/System-Monitoring/monitoring.sh 
