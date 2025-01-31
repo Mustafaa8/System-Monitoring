@@ -33,7 +33,7 @@ and add it to the file using cron syntax to schedule the running of the script
 
 Example:
 ```cron
-* * * * * sudo sh ~/System-Monitoring/monitoring.sh 
+* * * * * ~/System-Monitoring/monitoring.sh 
 ```
 ## Options
 the script has two options to change how it runs
