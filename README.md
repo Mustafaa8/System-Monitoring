@@ -15,7 +15,7 @@ script was written in bash with no external libraries or commands to be installe
 5. Generate a Report:
   • Save the collected information into a log file (e.g., system_monitor.log).
 
-## usage
+## Usage
 1. we need to clone the repo
 ```bash
 git clone https://github.com/Mustafaa8/System-Monitoring.git
